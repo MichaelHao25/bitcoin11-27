@@ -222,9 +222,10 @@
 					<div class="links">
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
-								<div class="swiper-slide"><a href="#" style="background-image: url(img/hico21.png);"></a></div>
-								<div class="swiper-slide"><a href="#" style="background-image: url(img/hico22.png);"></a></div>
-								<div class="swiper-slide"><a href="#" style="background-image: url(img/hico23.png);"></a></div>
+								<div class="swiper-slide"><a href="http://www.cnjuejin.com" style="background-image: url(img/hico21.png);"></a></div>
+								<div class="swiper-slide"><a href="http://www.poolgpu.com/" style="background-image: url(img/hico22.png);"></a></div>
+								<div class="swiper-slide"><a href="https://waterhole.io/" style="background-image: url(img/hico23.png);"></a></div>
+								<div class="swiper-slide"><a href="https://waterhole.io/" style="background-image: url(img/hico23.png);"></a></div>
 							</div>
 							<div class="swiper-button-prev"></div>
 							<div class="swiper-button-next"></div>
@@ -234,8 +235,8 @@
 				<div class="col-md-2 col-sm-4 right">
 					<aside class="bar">
 						<h3>视频教程</h3>
-						<div class="video">
-							<img src="img/hico24.png" alt="">
+						<div class="video" src="http://www.w3school.com.cn/i/movie.ogg">
+							<video src="http://www.w3school.com.cn/i/movie.ogg"></video>
 						</div>
 						<h3>挖矿软件界面</h3>
 						<div class="pic">
@@ -315,6 +316,15 @@
 			</div>
 		</div>
 	</footer>
+	<div class="preview-pictrue">
+		<img src="" alt="">
+	</div>
+	<div class="preview-video">
+		<video src="" controls=""></video>
+	</div>
+	<a class="fiex-right-share" href="#">
+		分<br>享
+	</a>
 	<script src="js/jquery-1.12.4.min.js"></script>
 	<script src="js/swiper-3.3.1.jquery.min.js"></script>
 	<script>
@@ -327,7 +337,28 @@
 			prevButton: '.links .swiper-button-prev',
 			slidesPerView : 3,
 			spaceBetween : 10,
+			autoplay:5000,
 		})   
+		$('.main .column .right .bar .pic .item img').on('click', function() {
+			console.log(1);
+			console.log(this.src)
+			$('.preview-pictrue img')[0].src = this.src;
+			$('.preview-pictrue').fadeIn();
+		});
+		$('.main .column .right .bar .video').on('click', function() {
+			console.log(1);
+			console.log($(this).attr('src'))
+			$('.preview-video video')[0].src = $(this).attr('src');
+			$('.preview-video video')[0].autoplay = true;
+			$('.preview-video').fadeIn();
+		});
+		$('.preview-pictrue,.preview-video').on('click', function() {
+			$(this).fadeOut();
+		}).on('click', 'img', function() {
+			return false;
+		}).on('click', 'video', function() {
+			return false;
+		});;
 	</script>
 </body>
 </html>

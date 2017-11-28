@@ -359,7 +359,7 @@ body{
 					.item+.item{
 						margin-top: 10px;
 					}
-					img{
+					img,video{
 						display: block;
 						width: 80%;
 						@media(min-width:768px){
@@ -448,5 +448,46 @@ body{
 		.copy-right{
 			padding-top: 20px;
 		}
+	}
+}
+
+.preview-pictrue,
+.preview-video{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 10;
+	display: none;
+	img,video{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width:95%;
+		display: block;
+		width: 100%;
+		@media(min-width:768px){
+			width: 80%;
+		}
+	}
+}
+
+.fiex-right-share{
+	position: fixed;
+	right: 0;
+	top: 50%;
+	font-size: 18px;
+	color: #fff;
+	line-height: 2;
+	padding: 20px 5px;
+	background: #b1d75d;
+	border-radius: 14px;
+	z-index: 10;
+	@media(min-width:768px){
+		right: 50%;
+		transform: translateX(700px);
 	}
 }
